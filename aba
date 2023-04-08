@@ -1,3 +1,4 @@
+local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/PUT THE PLACE ID HERE/servers/Public?sortOrder=Asc&limit=100"))
 repeat
     wait()
 until game.Loaded
@@ -52,11 +53,11 @@ if game.GameId == 578392296 then
         notify("Server Hopping")
         task.wait(1)
         serverHop()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/ServerHop.lua", true))()
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
     else
         notify("Server Hopping")
         serverHop()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/RZiln/GayBloxScripts/master/ABA/ServerHop.lua", true))()
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
     end
 
 end
